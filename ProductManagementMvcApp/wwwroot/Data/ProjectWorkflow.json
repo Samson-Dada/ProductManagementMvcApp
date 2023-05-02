@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "backlog": "Prototype",
+    "status": "In progress",
+    "completion": 20
+  },
+  {
+    "id": 2,
+    "backlog": "CI/CD",
+    "status": "In progress",
+    "completion": 70
+  },
+  {
+    "id": 3,
+    "backlog": "Web APIs",
+    "status": "Working",
+    "completion": 60
+  }
+]

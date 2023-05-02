@@ -1,0 +1,61 @@
+﻿@model ProductLIstViewModel
+
+<div class="pageheader mt-5">
+    <h1>Product List</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">All Products</li>
+            <li class="breadcrumb-item active">
+                <a asp-controller="Product" asp-action="Add"> Add New Product</a>
+            </li>
+        </ol>
+    </nav>
+</div>
+<!-- Product Page-->
+<section class="section">
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="card">
+                <div class="card-body">
+
+
+                    <!-- Table with stripped rows -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Available</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Created</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var product in Model.Products)
+                            {
+
+                                <tr>
+                                    <th scope="row">@product.Id</th>
+                                    <td>@product.Name</td>
+                                    <td>@product.Price.ToString("c")</td>
+                                    <td>@product.InStock</td>
+                                    <td>Cosmetics</td>
+                                    <td>20</td>
+                                    <td>2016-05-25</td>
+                                    <td><a class="" asp-controller="Product" 
+                                        asp-action="Details" asp-route-id="@product.Id">Product Detail</a></td>
+                                    <td><a asp-controller="Product" asp-action="Edit" class="">Edit Product</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <!-- End Table with stripped rows -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

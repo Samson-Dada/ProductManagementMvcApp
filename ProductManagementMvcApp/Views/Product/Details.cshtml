@@ -1,0 +1,40 @@
+﻿@model Product
+
+
+<div class="detailheader">
+    <h1>Product</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Product" asp-action="List">Product List</a></li>
+            <li class="breadcrumb-item active">Product Details</li>
+        </ol>
+    </nav>
+</div>
+<section class="section dashboard">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="card green-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Category<span> | Date Added (date)</span></h5>
+
+                        <div class="d-flex align-items-center">
+                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="bi bi-collection-fill"></i>
+                            </div>
+                            <div class="d-flex gap-5 align-content-center align-items-start justify-content-between">
+                                <h4 class="ps-3">@Model.Name</h4>
+                                <p class="">Price: @Model.Price.ToString("C")</p>
+                            </div>
+                        </div>
+                        <div class="d-flex border-top mt-2 p-2 justify-content-between">
+                            <p class="bold">
+                               @Model.Description
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
